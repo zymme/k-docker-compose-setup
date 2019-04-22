@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: test-rabbitmq
+
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+    restart: always
+
+    networks:
+      - myktrackernetwork
+
+
+
+  mongo-db:
+    image: mongo
+    container_name: test-mongodb
+
+    ports:
+      - "27017:27017"
+
+
+    networks:
+      - myktrackernetwork
+
+
+
+networks:
+  myktrackernetwork:
