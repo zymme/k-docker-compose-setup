@@ -3,6 +3,7 @@ version: '3'
 services:
   rabbitmq:
     image: rabbitmq:3-management
+    #build: ./rabbitmq
     container_name: test-rabbitmq
 
     ports:
